@@ -1,0 +1,438 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+}
+body{
+    background-color: rgb(248, 182, 13);
+}
+.container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr,1fr;
+}
+#navbar{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    padding: 10px 15px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(187, 245, 226);
+}
+#google{
+    letter-spacing: 1px;
+    border-right: 2px solid rgb(15, 15, 15);
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s 1 steps(17), cursor 0.8s step-end infinite alternate;
+}
+@keyframes cursor{
+    50%{
+        border-color: transparent;
+    }
+}
+@keyframes typing{
+    from{
+        width: 0;
+    }
+}
+
+#navbar-middle{
+    margin-right: 20px;
+}
+#greeting span{
+    color: rgba(233, 38, 38, 0.897);
+    filter: drop-shadow(2px 4px 1px  rgb(36, 79, 221));     
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.8rem;
+}
+#greeting span:nth-child(even){
+    animation-name: blinking;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+}
+@keyframes blinking{
+    50%{
+        opacity: 0;
+    }
+}
+#navbar-right #navbar-btn{
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(238, 27, 69);
+    color: #fff;
+    cursor: pointer;
+}
+#bottomdiv{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#bottomdivleft{
+    width: 60%;
+    display: grid;
+    grid-template-rows: repeat(4,auto);
+    margin: 10px 15px;
+    align-items: center;
+}
+#bottomdivleft h2,textarea,button{
+    margin: 8px;
+}
+#bottomdivleft textarea{
+    border: none;
+    border-radius: 10px;
+    padding: 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    word-spacing: 2px;
+    letter-spacing: 2px;
+}
+#title{
+    height: 150px;
+    width: 90%;
+}
+#content{
+    height: 220px;
+    width: 90%;
+}
+#save{
+    width: 150px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    color: #0f0;
+    background-color: #000;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+#save:hover{
+    background-color:#0f0;
+    color: #000;
+}
+#bottomdivright{
+    width: 38%;
+    margin: 0px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#parent{
+    width:390px;
+    margin:0 auto;
+    margin-top:70px;
+    padding:10px;
+}
+#heading{
+    font-weight:bold;
+    width:370px;
+    margin-bottom:10px;
+    font-size: 1.1rem;
+}
+#para{
+    width:370px;
+    font-weight:bold;
+}
+
+
+
+@media only screen and (max-width:320px){
+    #navbar{
+        width: 100%;
+        display: grid;
+        grid-template-columns:auto;
+        padding: 10px 10px;
+        justify-content: center;
+        text-align: center;
+    }
+    #google{
+        width: 67%;
+        margin: 0 auto;
+        font-size: 1.3rem;
+        margin-top: 10px;
+        text-align: center;
+    }
+    #navbar-middle{
+        width: 100%;
+        text-align: center;
+        margin: 10px 0px;
+        font-size: 0.6rem;
+        margin-right: 0px;
+    }
+    #greeting span{
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    #navbar-right #navbar-btn{
+        padding: 12px 20px;
+        font-size: 0.6rem;
+    }
+    #bottomdiv{
+        /* align-items: center; */
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr,1fr;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    #bottomdivleft{
+        width: 95%;
+        display: grid;
+        grid-template-rows: repeat(4,auto);
+        margin: 0 auto;
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+    #bottomdivleft h2,textarea,button{
+        margin: 5px;
+    }
+    #bottomdivleft h2{
+        font-size: 0.9rem;
+    }
+    #bottomdivleft textarea{
+        padding: 20px;
+        font-size: 0.7rem;
+    }
+    #title{
+        height: 120px;
+        width: 90%;
+    }
+    #content{
+        height: 180px;
+        width: 90%;
+    }
+    #save{
+        width: 100px;
+        padding: 8px 15px;
+        font-size: 0.7rem;
+    }
+    #bottomdivright{
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    #parent{
+        width:85%;
+        /* width: 250px; */
+        margin:0 auto;
+        margin-top:30px;
+        padding:8px;
+        text-align: left;
+    }
+    #heading{
+        font-weight:bold;
+        width:85%;
+        /* width: 230px; */
+        margin-bottom:10px;
+        font-size: 0.7rem;
+    }
+    #para{
+        /* width: 230px; */
+        width:85%;
+        font-weight:bold;
+        font-size: 0.6rem;
+    }
+}
+
+
+@media only screen and (min-width:321px) and (max-width:425px){
+    #navbar{
+        width: 100%;
+        display: grid;
+        grid-template-columns:auto;
+        padding: 10px 10px;
+        justify-content: center;
+        text-align: center;
+    }
+    #google{
+        width: 67%;
+        margin: 0 auto;
+        font-size: 1.4rem;
+        margin-top: 10px;
+        text-align: center;
+    }
+    #navbar-middle{
+        width: 100%;
+        text-align: center;
+        margin: 10px 0px;
+        margin-right: 0px;
+    }
+    #greeting span{
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+    #navbar-right #navbar-btn{
+        padding: 12px 20px;
+        font-size: 0.7rem;
+    }
+    #bottomdiv{
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr,1fr;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    #bottomdivleft{
+        width: 95%;
+        display: grid;
+        grid-template-rows: repeat(4,auto);
+        margin: 0 auto;
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+    #bottomdivleft h2,textarea,button{
+        margin: 5px;
+    }
+    #bottomdivleft h2{
+        font-size: 1.1rem;
+    }
+    #bottomdivleft textarea{
+        padding: 20px;
+        font-size: 0.8rem;
+    }
+    #title{
+        height: 120px;
+        width: 90%;
+    }
+    #content{
+        height: 180px;
+        width: 90%;
+    }
+    #save{
+        width: 100px;
+        padding: 8px 15px;
+        font-size: 0.7rem;
+    }
+    #bottomdivright{
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    #parent{
+        width:85%;
+        /* width: 250px; */
+        margin:0 auto;
+        margin-top:30px;
+        padding:5px;
+        text-align: left;
+    }
+    #heading{
+        font-weight:bold;
+        width:85%;
+        /* width: 230px; */
+        margin-bottom:10px;
+        font-size: 0.8rem;
+    }
+    #para{
+        /* width: 230px; */
+        width:85%;
+        font-weight:bold;
+        font-size: 0.6rem;
+    }
+}
+
+
+@media only screen and (min-width:426px) and (max-width:768px){
+    #navbar{
+        width: 100%;
+        display: grid;
+        grid-template-columns:auto;
+        padding: 10px 10px;
+        justify-content: center;
+        text-align: center;
+    }
+    #google{
+        width: 58%;
+        margin: 0 auto;
+        font-size: 1.8rem;
+        margin-top: 10px;
+        text-align: center;
+    }
+    #navbar-middle{
+        width: 100%;
+        text-align: center;
+        margin: 10px 0px;
+        margin-right: 0px;
+    }
+    #greeting span{
+        font-size: 1.7rem;
+        letter-spacing: 1px;
+    }
+    #navbar-right #navbar-btn{
+        padding: 12px 23px;
+        font-size: 0.9rem;
+    }
+    #bottomdiv{
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr,1fr;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    #bottomdivleft{
+        width: 95%;
+        display: grid;
+        grid-template-rows: repeat(4,auto);
+        margin: 0 auto;
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+    #bottomdivleft h2,textarea,button{
+        margin: 8px;
+    }
+    #bottomdivleft h2{
+        font-size: 1.5rem;
+    }
+    #bottomdivleft textarea{
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+    #title{
+        height: 140px;
+        width: 90%;
+    }
+    #content{
+        height: 200px;
+        width: 90%;
+    }
+    #save{
+        width: 130px;
+        padding: 8px 20px;
+        font-size: 0.8rem;
+    }
+    #bottomdivright{
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    #parent{
+        width:85%;
+        /* width: 250px; */
+        margin:0 auto;
+        margin-top:30px;
+        padding:5px;
+        text-align: left;
+    }
+    #heading{
+        font-weight:bold;
+        width:85%;
+        /* width: 230px; */
+        margin-bottom:10px;
+        font-size: 1rem;
+    }
+    #para{
+        /* width: 230px; */
+        width:85%;
+        font-weight:bold;
+        font-size: 0.8rem;
+    }
+}
