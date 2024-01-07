@@ -7,28 +7,32 @@ let ResetButton = document.getElementById("navbar-btn");
 
 let ParentTag = document.createElement("div");
 ParentTag.setAttribute("id","parent");
-// ParentTag.setAttribute("style","width:390px;margin:0 auto; margin-top:70px;padding:10px;");
 Target.appendChild(ParentTag);
 
 let HeadingTag = document.createElement("h3");
 HeadingTag.setAttribute("id","heading");
-// HeadingTag.setAttribute("style","font-weight:bold;width:370px;margin-bottom:10px;");
 ParentTag.appendChild(HeadingTag);
 
-let ParagraphTag = document.createElement("small");
+let ParagraphTag = document.createElement("p");
 ParagraphTag.setAttribute("id","para");
-// ParagraphTag.setAttribute("style","width:370px;font-weight:bold;");
 ParentTag.appendChild(ParagraphTag);
 
+let Checkbox = document.createElement("img");
+Checkbox.setAttribute("src","https://img.icons8.com/ios-glyphs/30/checked-checkbox.png");
+ParentTag.appendChild(Checkbox);
 
-HeadingTag.textContent = JSON.parse(localStorage.getItem("HeadingData"));   /*using this out data will not go when we refresh the page*/
-ParagraphTag.textContent =  JSON.parse(localStorage.getItem("ParagraphData")); 
+
+let DeleteBtn = document.createElement("img");
+DeleteBtn.setAttribute("src","https://img.icons8.com/ios-glyphs/30/filled-trash.png");
+ParentTag.appendChild(DeleteBtn);
 
 
 SaveBtn.addEventListener("click",function(){
     
     HeadingTag.textContent = Title.value;
     ParagraphTag.textContent = Content.value;
+    Checkbox.style.display = "inline-block";
+    DeleteBtn.style.display = "inline-block";
 
     if(HeadingTag){
         HeadingTag.textContent = localStorage.setItem("HeadingData",JSON.stringify(HeadingTag.textContent));
@@ -40,25 +44,38 @@ SaveBtn.addEventListener("click",function(){
         ParagraphTag.textContent =  JSON.parse(localStorage.getItem("ParagraphData")); 
     }
 
-
+    if(HeadingTag.textContent.indexOf >50 && ParagraphTag.textContent.indexOf >50){
+        HeadingTag.style.wordBreak = "break";
+        ParagraphTag.style.wordBreak = "break";
+    }
 
     if(Title.value == "" || Title.value == null){
         alert("Please Complete The Title Notes");
     }
-    else if(Title.value.length<10){
-        alert("Title Value Should Be More Then 10 Words");
-    }
-    else if(Content.value.length<10){
-        alert("Content Should Be More Then 10 Words");
-    }
     else if(Content.value == "" || Content.value == null){
         alert("Please Complete The Content Notes");
+        HeadingTag.innerHTML = "";
     }
     else{
         Title.value = "";
         Content.value = "";
     }
     
+});
+
+
+Checkbox.addEventListener("click",()=>{
+    Title.value =  HeadingTag.textContent;
+    Content.value = ParagraphTag.textContent;
+})
+
+DeleteBtn.addEventListener("click",()=>{
+    if(DeleteBtn){
+        alert("Are You Sure Want To Delete Notes");
+    }
+    ParentTag.style.display = "none";
+    Title.value = "";
+    Content.value = "";
 });
 
 
