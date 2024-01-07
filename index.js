@@ -51,10 +51,15 @@ SaveBtn.addEventListener("click",function(){
 
     if(Title.value == "" || Title.value == null){
         alert("Please Complete The Title Notes");
+        Checkbox.style.display = "none";
+        DeleteBtn.style.display = "none";
+        ParagraphTag.innerHTML = "";
     }
     else if(Content.value == "" || Content.value == null){
         alert("Please Complete The Content Notes");
         HeadingTag.innerHTML = "";
+        Checkbox.style.display = "none";
+        DeleteBtn.style.display = "none";
     }
     else{
         Title.value = "";
