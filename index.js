@@ -75,18 +75,19 @@ Checkbox.addEventListener("click",()=>{
 })
 
 DeleteBtn.addEventListener("click",()=>{
-    if(DeleteBtn){
-        alert("Are You Sure Want To Delete Notes");
+    if(confirm("Are You Sure Want To Delete Notes") == true){
+        ParentTag.innerHTML = "";
+        Title.value = "";
+        Content.value = "";
     }
-    ParentTag.style.display = "none";
-    Title.value = "";
-    Content.value = "";
 });
 
 
 ResetButton.addEventListener("click",function(){
     ParentTag.style.display = "none";
-})
+    ParentTag.innerHTML = localStorage.clear("HeadingData");
+    ParentTag.innerHTML = localStorage.clear("ParagraphData");
+});
 
 
 
